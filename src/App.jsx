@@ -108,12 +108,12 @@ function App() {
   ]
 
   const features = [
-    { icon: "🎯", title: "Personalized Learning", desc: "Customized learning paths based on your goals and current skill level", delay: 0 },
-    { icon: "👨‍💻", title: "Expert Mentors", desc: "Learn from ex-FAANG engineers with 10+ years of industry experience", delay: 100 },
-    { icon: "📊", title: "Real Projects", desc: "Work on industry-level projects that showcase your skills to employers", delay: 200 },
-    { icon: "🎪", title: "Mock Interviews", desc: "Practice with real interview questions from top tech companies", delay: 300 },
-    { icon: "💼", title: "Job Placement", desc: "Dedicated placement support with 95% success rate in top companies", delay: 400 },
-    { icon: "🌟", title: "24/7 Support", desc: "Round-the-clock assistance from mentors and peer community", delay: 500 }
+    { icon: "🎯", title: "Industry-Ready Curriculum", desc: "Cutting-edge programs designed in partnership with top IT companies to match current market demands", delay: 0 },
+    { icon: "👨‍💻", title: "Expert Faculty Network", desc: "Learn from industry veterans and certified professionals with 15+ years of experience", delay: 100 },
+    { icon: "📊", title: "Live Project Experience", desc: "Work on real-world projects from our partner companies to build your portfolio", delay: 200 },
+    { icon: "🎪", title: "Interview Mastery", desc: "Comprehensive interview preparation with 500+ mock sessions and company-specific training", delay: 300 },
+    { icon: "💼", title: "Guaranteed Placement", desc: "95% placement success rate with dedicated placement cell and corporate partnerships", delay: 400 },
+    { icon: "🌟", title: "Continuous Learning", desc: "Lifetime access to updated content and alumni network for ongoing career growth", delay: 500 }
   ]
 
   return (
@@ -431,14 +431,14 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-amber-400 to-amber-500 bg-clip-text text-transparent">
-                Excellence
-              </span>
+              <span className="text-white">Why Choose</span>
               <br />
-              <span className="text-white">Redefined</span>
+              <span className="bg-gradient-to-r from-amber-400 to-amber-500 bg-clip-text text-transparent">
+                Top Freshers
+              </span>
             </h2>
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-              Crafted for those who demand nothing but the best
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+              Transform your career with industry-leading training programs designed for success
             </p>
           </div>
 
