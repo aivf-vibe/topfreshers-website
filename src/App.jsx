@@ -189,7 +189,75 @@ function App() {
         </div>
       </nav>
 
-      {/* Meet Section - New Comprehensive Content */}
+      {/* Hero Section with Parallax */}
+      <section id="home" className="relative min-h-screen flex items-center justify-center pt-20">
+        <div className="absolute inset-0">
+          <div 
+            className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
+            style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-amber-400/5 to-amber-500/5" />
+        </div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="space-y-8">
+            <h1 className="text-6xl md:text-8xl font-bold">
+              <span className="bg-gradient-to-r from-amber-400 to-amber-500 bg-clip-text text-transparent">
+                Master
+              </span>
+              <br />
+              <span className="text-white">
+                Technical
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-amber-400 to-amber-500 bg-clip-text text-transparent">
+                Interviews
+              </span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+              Transform your career with our elite training programs. 
+              From DSA to system design, we craft excellence.
+            </p>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto py-12">
+              {stats.map((stat, index) => (
+                <div key={index} className="group">
+                  <div className="text-4xl mb-2 text-amber-400 group-hover:scale-110 transition-transform duration-300">
+                    {stat.icon}
+                  </div>
+                  <div className="text-3xl font-bold text-white mb-1">{stat.number}</div>
+                  <div className="text-sm text-slate-400">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <button 
+                onClick={() => scrollToSection('programs')} 
+                className="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 px-8 py-4 rounded-full text-lg font-bold hover:shadow-2xl hover:shadow-amber-500/25 transition-all duration-300 hover:scale-105"
+              >
+                Start Your Journey
+              </button>
+              <button className="border border-amber-400/50 text-amber-400 px-8 py-4 rounded-full text-lg font-semibold hover:bg-amber-400 hover:text-slate-900 transition-all duration-300">
+                Watch Demo
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Parallax Elements */}
+        <div 
+          className="absolute top-1/4 left-1/4 w-2 h-2 bg-amber-400 rounded-full"
+          style={{ transform: `translateY(${scrollY * 0.3}px)` }}
+        />
+        <div 
+          className="absolute top-3/4 right-1/4 w-1 h-1 bg-amber-500 rounded-full"
+          style={{ transform: `translateY(${scrollY * -0.2}px)` }}
+        />
+      </section>
+
+      {/* Meet Section - After Home */}
       <section id="meet" className="py-32 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
@@ -266,72 +334,96 @@ function App() {
         </div>
       </section>
 
-      {/* Hero Section with Parallax */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center pt-20">
-        <div className="absolute inset-0">
-          <div 
-            className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
-            style={{ transform: `translateY(${scrollY * 0.5}px)` }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-amber-400/5 to-amber-500/5" />
-        </div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="space-y-8">
-            <h1 className="text-6xl md:text-8xl font-bold">
-              <span className="bg-gradient-to-r from-amber-400 to-amber-500 bg-clip-text text-transparent">
-                Master
-              </span>
-              <br />
-              <span className="text-white">
-                Technical
-              </span>
+      {/* Programs Section - New Comprehensive Content */}
+      <section id="programs" className="py-32 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+              <span className="text-white">Our</span>
               <br />
               <span className="bg-gradient-to-r from-amber-400 to-amber-500 bg-clip-text text-transparent">
-                Interviews
+                Programs
               </span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-              Transform your career with our elite training programs. 
-              From DSA to system design, we craft excellence.
+            </h2>
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+              Industry-focused training programs designed to make you job-ready
             </p>
+          </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto py-12">
-              {stats.map((stat, index) => (
-                <div key={index} className="group">
-                  <div className="text-4xl mb-2 text-amber-400 group-hover:scale-110 transition-transform duration-300">
-                    {stat.icon}
-                  </div>
-                  <div className="text-3xl font-bold text-white mb-1">{stat.number}</div>
-                  <div className="text-sm text-slate-400">{stat.label}</div>
-                </div>
-              ))}
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Web Development Fellowship */}
+            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl hover:border-amber-400/50 transition-all duration-300">
+              <div className="text-4xl mb-4 text-amber-400">💻</div>
+              <h3 className="text-2xl font-bold text-white mb-4">Web Development Fellowship</h3>
+              <p className="text-slate-300 leading-relaxed mb-4">
+                Learn how to code and design web and mobile responsive applications professionally in one immersive, project-based course. Students must complete 9-week in-person training which is followed by a 2-week apprenticeship.
+              </p>
+              <div className="flex items-center justify-between">
+                <span className="text-amber-400 font-semibold">Duration: 11 weeks</span>
+                <button className="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 px-6 py-2 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300">
+                  Read More
+                </button>
+              </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button 
-                onClick={() => scrollToSection('programs')} 
-                className="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 px-8 py-4 rounded-full text-lg font-bold hover:shadow-2xl hover:shadow-amber-500/25 transition-all duration-300 hover:scale-105"
-              >
-                Start Your Journey
-              </button>
-              <button className="border border-amber-400/50 text-amber-400 px-8 py-4 rounded-full text-lg font-semibold hover:bg-amber-400 hover:text-slate-900 transition-all duration-300">
-                Watch Demo
+            {/* UX Design */}
+            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl hover:border-amber-400/50 transition-all duration-300">
+              <div className="text-4xl mb-4 text-amber-400">🎨</div>
+              <h3 className="text-2xl font-bold text-white mb-4">UX Design</h3>
+              <p className="text-slate-300 leading-relaxed mb-4">
+                During this 12-week, hands on learning experience, students are brought through User Interface & User Experience Design industry best practices from the ground up. Through 4 hands-on projects (1 with an outside client!), students will learn Information Architecture, Interaction Design, Interface Design, and Usability Testing.
+              </p>
+              <div className="flex items-center justify-between">
+                <span className="text-amber-400 font-semibold">Duration: 12 weeks</span>
+                <button className="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 px-6 py-2 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300">
+                  Read More
+                </button>
+              </div>
+            </div>
+
+            {/* Algorithms and Data Structures */}
+            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl hover:border-amber-400/50 transition-all duration-300">
+              <div className="text-4xl mb-4 text-amber-400">⚡</div>
+              <h3 className="text-2xl font-bold text-white mb-4">Algorithms and Data Structures</h3>
+              <p className="text-slate-300 leading-relaxed mb-4">
+                Algorithms and Data Structures are the essential frameworks for solving almost any coding challenges. This course covers major types of algorithms and data structures using Java, C, or Python. Learn to think like a computer scientist and take an engineering approach to solving complex problems.
+              </p>
+              <div className="flex items-center justify-between">
+                <span className="text-amber-400 font-semibold">Languages: Java/C/Python</span>
+                <button className="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 px-6 py-2 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300">
+                  Read More
+                </button>
+              </div>
+            </div>
+
+            {/* Campus to Career */}
+            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl hover:border-amber-400/50 transition-all duration-300">
+              <div className="text-4xl mb-4 text-amber-400">🎓</div>
+              <h3 className="text-2xl font-bold text-white mb-4">Campus to Career – Employability Training</h3>
+              <p className="text-slate-300 leading-relaxed mb-4">
+                An employability enhancement program designed in conjunction with some of the top IT companies in India. The program aims to advance students in the areas of analytical skills, business communication and soft skills. The training program consists of a blended delivery model comprising 150 hours - 50 hours contact session & 100 hours online component.
+              </p>
+              <div className="flex items-center justify-between">
+                <span className="text-amber-400 font-semibold">Duration: 150 hours</span>
+                <button className="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 px-6 py-2 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300">
+                  Read More
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-16 text-center">
+            <div className="bg-gradient-to-r from-amber-400/10 to-amber-500/10 backdrop-blur-sm border border-amber-400/20 p-8 rounded-2xl">
+              <h3 className="text-2xl font-bold text-white mb-4">Ready to Start Your Journey?</h3>
+              <p className="text-slate-300 mb-6">
+                Choose from our comprehensive programs and transform your career with industry-relevant skills
+              </p>
+              <button onClick={() => scrollToSection('contact')} className="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 px-8 py-3 rounded-full text-lg font-medium hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300">
+                Get Started Today
               </button>
             </div>
           </div>
         </div>
-
-        {/* Parallax Elements */}
-        <div 
-          className="absolute top-1/4 left-1/4 w-2 h-2 bg-amber-400 rounded-full"
-          style={{ transform: `translateY(${scrollY * 0.3}px)` }}
-        />
-        <div 
-          className="absolute top-3/4 right-1/4 w-1 h-1 bg-amber-500 rounded-full"
-          style={{ transform: `translateY(${scrollY * -0.2}px)` }}
-        />
       </section>
 
       {/* Features Section with Motion */}
