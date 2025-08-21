@@ -1,8 +1,13 @@
 
 
 
+
 import { useState, useEffect, useRef } from 'react'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import './App.css'
+import WebDevelopment from './WebDevelopment'
+import UXDesign from './UXDesign'
+import Algorithms from './Algorithms'
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
