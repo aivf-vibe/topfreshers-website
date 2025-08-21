@@ -7,7 +7,11 @@ import './App.css'
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
+
   const [showWebDevDetails, setShowWebDevDetails] = useState(false)
+  const [showUXDetails, setShowUXDetails] = useState(false)
+  const [showAlgoDetails, setShowAlgoDetails] = useState(false)
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -370,6 +374,8 @@ function App() {
               </div>
             </div>
 
+
+
             {/* UX Design */}
             <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl hover:border-amber-400/50 transition-all duration-300">
               <div className="text-4xl mb-4 text-amber-400">🎨</div>
@@ -379,7 +385,10 @@ function App() {
               </p>
               <div className="flex items-center justify-between">
                 <span className="text-amber-400 font-semibold">Duration: 12 weeks</span>
-                <button className="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 px-6 py-2 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300">
+                <button 
+                  onClick={() => setShowUXDetails(true)}
+                  className="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 px-6 py-2 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300"
+                >
                   Read More
                 </button>
               </div>
@@ -394,7 +403,10 @@ function App() {
               </p>
               <div className="flex items-center justify-between">
                 <span className="text-amber-400 font-semibold">Languages: Java/C/Python</span>
-                <button className="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 px-6 py-2 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300">
+                <button 
+                  onClick={() => setShowAlgoDetails(true)}
+                  className="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 px-6 py-2 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300"
+                >
                   Read More
                 </button>
               </div>
@@ -556,6 +568,220 @@ function App() {
                   </button>
                   <button 
                     onClick={() => setShowWebDevDetails(false)}
+                    className="border border-amber-400/50 text-amber-400 px-8 py-3 rounded-full text-lg font-medium hover:bg-amber-400 hover:text-slate-900 transition-all duration-300"
+                  >
+                    Back to Programs
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+      )}
+
+      {/* UX Design Detailed Content */}
+      {showUXDetails && (
+        <section id="ux-details" className="py-32 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <button 
+                onClick={() => setShowUXDetails(false)}
+                className="mb-8 text-amber-400 hover:text-amber-300 flex items-center mx-auto"
+              >
+                <span className="mr-2">←</span> Back to Programs
+              </button>
+              <h2 className="text-5xl md:text-6xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-amber-400 to-amber-500 bg-clip-text text-transparent">
+                  UX Design
+                </span>
+                <br />
+                <span className="text-white">Intensive</span>
+              </h2>
+              <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+                Master the complete UX design process from research to portfolio-ready projects
+              </p>
+            </div>
+
+            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl mb-8">
+              <h3 className="text-2xl font-bold text-white mb-4">UX Design Intensive</h3>
+              <p className="text-slate-300 leading-relaxed mb-4">
+                During this 12-week, hands on learning experience, students are brought through User Interface & User Experience Design industry best practices from the ground up. Through 4 hands-on projects (1 with an outside client!), students will learn Information Architecture, Interaction Design, Interface Design, and Usability Testing. After learning trade tools like Sketch & InVision, you'll have a complete professional UX Design portfolio.
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-3 gap-8">
+              {/* Core UX Components */}
+              <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold text-white mb-4">Core Components</h3>
+                <div className="space-y-3">
+                  {['Concept Design', 'Information Architecture', 'Interaction Design', 'Interface Design'].map(item => (
+                    <div key={item} className="flex items-center">
+                      <div className="w-2 h-2 bg-amber-400 rounded-full mr-3"></div>
+                      <span className="text-slate-300">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Research & Testing */}
+              <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold text-white mb-4">Research & Testing</h3>
+                <div className="space-y-3">
+                  {['Personas', 'Qualitative Research', 'Usability Testing', 'User Scenarios'].map(item => (
+                    <div key={item} className="flex items-center">
+                      <div className="w-2 h-2 bg-amber-400 rounded-full mr-3"></div>
+                      <span className="text-slate-300">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Design & Prototyping */}
+              <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold text-white mb-4">Design & Prototyping</h3>
+                <div className="space-y-3">
+                  {['Prototyping', 'Wireframes', 'Sketch', 'Professional Development'].map(item => (
+                    <div key={item} className="flex items-center">
+                      <div className="w-2 h-2 bg-amber-400 rounded-full mr-3"></div>
+                      <span className="text-slate-300">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Project Management */}
+              <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl lg:col-span-3">
+                <h3 className="text-2xl font-bold text-white mb-4">Project Management & Portfolio</h3>
+                <div className="grid md:grid-cols-3 gap-4">
+                  {['Project Management', 'Project Scoping', 'Portfolio Development', 'Client Projects', 'Industry Tools', 'Career Preparation'].map(item => (
+                    <div key={item} className="bg-slate-700/30 p-4 rounded-lg">
+                      <span className="text-slate-300">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-16 text-center">
+              <div className="bg-gradient-to-r from-amber-400/10 to-amber-500/10 backdrop-blur-sm border border-amber-400/20 p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold text-white mb-4">Ready to Master UX Design?</h3>
+                <p className="text-slate-300 mb-6">
+                  Join our 12-week intensive program and build your professional UX portfolio
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <button 
+                    onClick={() => { setShowUXDetails(false); scrollToSection('contact'); }}
+                    className="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 px-8 py-3 rounded-full text-lg font-medium hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300"
+                  >
+                    Enroll Now
+                  </button>
+                  <button 
+                    onClick={() => setShowUXDetails(false)}
+                    className="border border-amber-400/50 text-amber-400 px-8 py-3 rounded-full text-lg font-medium hover:bg-amber-400 hover:text-slate-900 transition-all duration-300"
+                  >
+                    Back to Programs
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Algorithms & Data Structures Detailed Content */}
+      {showAlgoDetails && (
+        <section id="algo-details" className="py-32 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <button 
+                onClick={() => setShowAlgoDetails(false)}
+                className="mb-8 text-amber-400 hover:text-amber-300 flex items-center mx-auto"
+              >
+                <span className="mr-2">←</span> Back to Programs
+              </button>
+              <h2 className="text-5xl md:text-6xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-amber-400 to-amber-500 bg-clip-text text-transparent">
+                  Algorithms & Data
+                </span>
+                <br />
+                <span className="text-white">Structures</span>
+              </h2>
+              <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+                Master essential frameworks for solving complex coding challenges
+              </p>
+            </div>
+
+            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl mb-8">
+              <h3 className="text-2xl font-bold text-white mb-4">Course Overview</h3>
+              <p className="text-slate-300 leading-relaxed mb-4">
+                Algorithms and Data Structures are the essential frameworks for solving almost any coding challenges. To choose the right approach to a particular problem and forge an effective solution, one needs to understand the relative strengths and weaknesses of each of these tools & techniques.
+              </p>
+              <p className="text-slate-300 leading-relaxed mb-4">
+                In this course, students will examine, create, compare and test the major types of algorithms and data structures. We'll cover how to optimize the code they've already mastered and how to create more advanced tools as necessary. Learn to think like a computer scientist, and take an engineering approach to solving complex problems.
+              </p>
+              <p className="text-slate-300 leading-relaxed">
+                This course is programming language-agnostic, the developmental assignments & activities can be in any language, such as Java or C or Python (as per their choice).
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-8">
+              {/* Course Content */}
+              <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold text-white mb-4">Course Content</h3>
+                <div className="space-y-3">
+                  {['Number base systems', 'Recursions', 'Sorting algorithms and Big O analysis', 'Arrays and dynamic arrays', 'Lists, stacks and queues', 'Hash tables and binary trees', 'Build data structures from scratch'].map(item => (
+                    <div key={item} className="flex items-center">
+                      <div className="w-2 h-2 bg-amber-400 rounded-full mr-3"></div>
+                      <span className="text-slate-300">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Learning Approach */}
+              <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold text-white mb-4">Learning Approach</h3>
+                <div className="space-y-3">
+                  {['Hands-on learning', 'Language-agnostic approach', 'Real-world problem solving', 'Performance optimization', 'Code optimization techniques', 'Engineering mindset'].map(item => (
+                    <div key={item} className="flex items-center">
+                      <div className="w-2 h-2 bg-amber-400 rounded-full mr-3"></div>
+                      <span className="text-slate-300">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Programming Languages */}
+              <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl lg:col-span-2">
+                <h3 className="text-2xl font-bold text-white mb-4">Supported Languages</h3>
+                <div className="grid md:grid-cols-3 gap-4">
+                  {['Java', 'C', 'Python'].map(lang => (
+                    <div key={lang} className="bg-slate-700/30 p-6 rounded-lg text-center">
+                      <div className="text-3xl mb-2">{lang === 'Java' ? '☕' : lang === 'C' ? '⚡' : '🐍'}</div>
+                      <span className="text-slate-300 font-semibold">{lang}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-16 text-center">
+              <div className="bg-gradient-to-r from-amber-400/10 to-amber-500/10 backdrop-blur-sm border border-amber-400/20 p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold text-white mb-4">Every learner has a unique learning need and style!</h3>
+                <p className="text-slate-300 mb-6">
+                  Our entire program has been developed with YOUR students in mind. Start your algorithm mastery journey today.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <button 
+                    onClick={() => { setShowAlgoDetails(false); scrollToSection('contact'); }}
+                    className="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 px-8 py-3 rounded-full text-lg font-medium hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300"
+                  >
+                    Enroll Now
+                  </button>
+                  <button 
+                    onClick={() => setShowAlgoDetails(false)}
                     className="border border-amber-400/50 text-amber-400 px-8 py-3 rounded-full text-lg font-medium hover:bg-amber-400 hover:text-slate-900 transition-all duration-300"
                   >
                     Back to Programs
