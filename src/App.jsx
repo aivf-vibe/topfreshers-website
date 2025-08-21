@@ -7,6 +7,7 @@ import './App.css'
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
+  const [showWebDevDetails, setShowWebDevDetails] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -360,7 +361,10 @@ function App() {
               </p>
               <div className="flex items-center justify-between">
                 <span className="text-amber-400 font-semibold">Duration: 11 weeks</span>
-                <button className="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 px-6 py-2 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300">
+                <button 
+                  onClick={() => setShowWebDevDetails(true)}
+                  className="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 px-6 py-2 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300"
+                >
                   Read More
                 </button>
               </div>
@@ -426,44 +430,145 @@ function App() {
         </div>
       </section>
 
-      {/* Features Section with Motion */}
-      <section id="features" className="py-32 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-white">Why Choose</span>
-              <br />
-              <span className="bg-gradient-to-r from-amber-400 to-amber-500 bg-clip-text text-transparent">
-                Top Freshers
-              </span>
-            </h2>
-            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-              Transform your career with industry-leading training programs designed for success
-            </p>
-          </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <div 
-                key={index} 
-                className="group relative"
-                style={{ transform: `translateY(${-scrollY * 0.1}px)` }}
+      {/* Web Development Detailed Content */}
+      {showWebDevDetails && (
+        <section id="webdev-details" className="py-32 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <button 
+                onClick={() => setShowWebDevDetails(false)}
+                className="mb-8 text-amber-400 hover:text-amber-300 flex items-center mx-auto"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-400/10 to-amber-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl hover:border-amber-400/50 transition-all duration-300 hover:scale-105">
-                  <div className="text-5xl mb-4 text-amber-400 group-hover:scale-110 transition-transform duration-300">
-                    {feature.icon}
+                <span className="mr-2">←</span> Back to Programs
+              </button>
+              <h2 className="text-5xl md:text-6xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-amber-400 to-amber-500 bg-clip-text text-transparent">
+                  Web Development
+                </span>
+                <br />
+                <span className="text-white">Fellowship</span>
+              </h2>
+              <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+                Master the complete web development stack from front-end to back-end
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-12">
+              {/* Front End Development */}
+              <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl">
+                <div className="text-4xl mb-4 text-amber-400">🎨</div>
+                <h3 className="text-2xl font-bold text-white mb-4">Front End Development</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  Front-end web development, also known as client-side development is the practice of producing HTML, CSS and JavaScript for a website or Web Application so that a user can see and interact with them directly.
+                </p>
+                <div className="mt-4">
+                  <span className="text-amber-400 font-semibold">Technologies:</span>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {['HTML5', 'CSS3', 'JavaScript', 'React', 'Vue.js', 'Bootstrap'].map(tech => (
+                      <span key={tech} className="bg-slate-700/50 px-3 py-1 rounded-full text-sm text-slate-300">{tech}</span>
+                    ))}
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-3">{feature.title}</h3>
-                  <p className="text-slate-400 leading-relaxed">{feature.desc}</p>
                 </div>
               </div>
-            ))}
+
+              {/* Back End Development */}
+              <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl">
+                <div className="text-4xl mb-4 text-amber-400">⚙️</div>
+                <h3 className="text-2xl font-bold text-white mb-4">Back End Development</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  Build the core computational logic of a website or web application. This includes interaction with a database or third-party integrations, and ensuring data integrity.
+                </p>
+                <div className="mt-4">
+                  <span className="text-amber-400 font-semibold">Technologies:</span>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {['Node.js', 'Python', 'Django', 'Express', 'MongoDB', 'PostgreSQL'].map(tech => (
+                      <span key={tech} className="bg-slate-700/50 px-3 py-1 rounded-full text-sm text-slate-300">{tech}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Development Tools */}
+              <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl">
+                <div className="text-4xl mb-4 text-amber-400">🛠️</div>
+                <h3 className="text-2xl font-bold text-white mb-4">Development Tools</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  Additional applications or software that developers and designers can use to increase productivity or functionality of websites.
+                </p>
+                <div className="mt-4">
+                  <span className="text-amber-400 font-semibold">Tools:</span>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {['VS Code', 'Git', 'Docker', 'Webpack', 'Postman', 'Figma'].map(tool => (
+                      <span key={tool} className="bg-slate-700/50 px-3 py-1 rounded-full text-sm text-slate-300">{tool}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* UX Processes */}
+              <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl">
+                <div className="text-4xl mb-4 text-amber-400">🎯</div>
+                <h3 className="text-2xl font-bold text-white mb-4">UX Processes</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  The key components of User Experience Design that allow designers to understand their users, create efficient flows, and optimize for the best user experience possible.
+                </p>
+                <div className="mt-4">
+                  <span className="text-amber-400 font-semibold">Processes:</span>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {['User Research', 'Wireframing', 'Prototyping', 'Usability Testing', 'User Journey', 'A/B Testing'].map(process => (
+                      <span key={process} className="bg-slate-700/50 px-3 py-1 rounded-full text-sm text-slate-300">{process}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Concept Design */}
+              <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl lg:col-span-2">
+                <div className="text-4xl mb-4 text-amber-400">💡</div>
+                <h3 className="text-2xl font-bold text-white mb-4">Concept Design</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  Miscellaneous tools or concepts a developer or designer should understand to create comprehensive web solutions.
+                </p>
+                <div className="mt-4">
+                  <span className="text-amber-400 font-semibold">Concepts:</span>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {['Responsive Design', 'API Integration', 'Security Best Practices', 'Performance Optimization', 'SEO', 'Accessibility'].map(concept => (
+                      <span key={concept} className="bg-slate-700/50 px-3 py-1 rounded-full text-sm text-slate-300">{concept}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-16 text-center">
+              <div className="bg-gradient-to-r from-amber-400/10 to-amber-500/10 backdrop-blur-sm border border-amber-400/20 p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold text-white mb-4">Ready to Start Your Web Development Journey?</h3>
+                <p className="text-slate-300 mb-6">
+                  Join our 11-week intensive program and become a full-stack web developer
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <button 
+                    onClick={() => { setShowWebDevDetails(false); scrollToSection('contact'); }}
+                    className="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 px-8 py-3 rounded-full text-lg font-medium hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300"
+                  >
+                    Enroll Now
+                  </button>
+                  <button 
+                    onClick={() => setShowWebDevDetails(false)}
+                    className="border border-amber-400/50 text-amber-400 px-8 py-3 rounded-full text-lg font-medium hover:bg-amber-400 hover:text-slate-900 transition-all duration-300"
+                  >
+                    Back to Programs
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Programs Section with Elegance */}
+
       <section id="programs" className="py-32 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
