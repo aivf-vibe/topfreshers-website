@@ -152,6 +152,7 @@ function App() {
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
                 <button onClick={() => scrollToSection('home')} className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:text-amber-400 ${activeSection === 'home' ? 'text-amber-400 border-b-2 border-amber-400' : 'text-slate-300'}`}>Home</button>
+                <button onClick={() => scrollToSection('meet')} className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:text-amber-400 ${activeSection === 'meet' ? 'text-amber-400 border-b-2 border-amber-400' : 'text-slate-300'}`}>Meet</button>
                 <button onClick={() => scrollToSection('features')} className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:text-amber-400 ${activeSection === 'features' ? 'text-amber-400 border-b-2 border-amber-400' : 'text-slate-300'}`}>Features</button>
                 <button onClick={() => scrollToSection('programs')} className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:text-amber-400 ${activeSection === 'programs' ? 'text-amber-400 border-b-2 border-amber-400' : 'text-slate-300'}`}>Programs</button>
                 <button onClick={() => scrollToSection('success')} className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:text-amber-400 ${activeSection === 'success' ? 'text-amber-400 border-b-2 border-amber-400' : 'text-slate-300'}`}>Success</button>
@@ -177,6 +178,7 @@ function App() {
             <div className="md:hidden bg-slate-800/95 backdrop-blur-xl border-t border-slate-700">
               <div className="px-2 pt-2 pb-3 space-y-1">
                 <button onClick={() => scrollToSection('home')} className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left ${activeSection === 'home' ? 'text-amber-400 bg-slate-700/50' : 'text-slate-300 hover:bg-slate-700/50'}`}>Home</button>
+                <button onClick={() => scrollToSection('meet')} className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left ${activeSection === 'meet' ? 'text-amber-400 bg-slate-700/50' : 'text-slate-300 hover:bg-slate-700/50'}`}>Meet</button>
                 <button onClick={() => scrollToSection('features')} className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left ${activeSection === 'features' ? 'text-amber-400 bg-slate-700/50' : 'text-slate-300 hover:bg-slate-700/50'}`}>Features</button>
                 <button onClick={() => scrollToSection('programs')} className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left ${activeSection === 'programs' ? 'text-amber-400 bg-slate-700/50' : 'text-slate-300 hover:bg-slate-700/50'}`}>Programs</button>
                 <button onClick={() => scrollToSection('success')} className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left ${activeSection === 'success' ? 'text-amber-400 bg-slate-700/50' : 'text-slate-300 hover:bg-slate-700/50'}`}>Success</button>
@@ -186,6 +188,83 @@ function App() {
           )}
         </div>
       </nav>
+
+      {/* Meet Section - New Comprehensive Content */}
+      <section id="meet" className="py-32 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+              <span className="text-white">Meet</span>
+              <br />
+              <span className="bg-gradient-to-r from-amber-400 to-amber-500 bg-clip-text text-transparent">
+                Top Freshers
+              </span>
+            </h2>
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+              Transforming India's education landscape through innovative learning solutions
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h3 className="text-3xl font-bold text-white mb-6">The Education Revolution</h3>
+              <p className="text-slate-300 leading-relaxed mb-6">
+                The education scenario in India has been a great success story with progressive steps taken by the government greatly helped by many private sector initiatives. Institutions have been established across the country with an aim to make education accessible and inclusive. A great many success stories are a testament to this growth.
+              </p>
+              <p className="text-slate-300 leading-relaxed mb-6">
+                But the high growth has also given rise to challenges that need urgent attention. Maintaining quality, given the sheer numbers in India is a huge task that is testing even the most versatile institutions. Employability is another area of concern where interventions are required to bridge the industry-academia gap.
+              </p>
+              <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-6 rounded-2xl">
+                <h4 className="text-xl font-bold text-amber-400 mb-3">Our Vision</h4>
+                <p className="text-slate-300">
+                  Top Freshers Technologies Pvt Ltd., aims to address these areas and provide learning solutions to institutions that will help them overcome these challenges.
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl hover:border-amber-400/50 transition-all duration-300">
+                <div className="text-4xl mb-4 text-amber-400">🎯</div>
+                <h4 className="text-2xl font-bold text-white mb-3">Innovative Learning Models</h4>
+                <p className="text-slate-400">
+                  We propose to design learning programs and deliver them through innovative models to help institutions and students gain access to an eco-system of educational resources.
+                </p>
+              </div>
+
+              <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl hover:border-amber-400/50 transition-all duration-300">
+                <div className="text-4xl mb-4 text-amber-400">🌐</div>
+                <h4 className="text-2xl font-bold text-white mb-3">Digital Education Focus</h4>
+                <p className="text-slate-400">
+                  We are specifically looking at digital education, employability programs and vocational education in designing these learning solutions.
+                </p>
+              </div>
+
+              <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl hover:border-amber-400/50 transition-all duration-300">
+                <div className="text-4xl mb-4 text-amber-400">🚀</div>
+                <h4 className="text-2xl font-bold text-white mb-3">Mission Statement</h4>
+                <p className="text-slate-400">
+                  Create a sustainable industry-ready talent pipeline by scaling quality capacity. Enhance employability at all levels, leveraging technology and our experience in large scale skill development, in a sustainable manner.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-20 grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="text-5xl font-bold text-amber-400 mb-2">1000+</div>
+              <div className="text-slate-300">Institutions Partnered</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold text-amber-400 mb-2">50K+</div>
+              <div className="text-slate-300">Students Trained</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold text-amber-400 mb-2">95%</div>
+              <div className="text-slate-300">Placement Success Rate</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Hero Section with Parallax */}
       <section id="home" className="relative min-h-screen flex items-center justify-center pt-20">
